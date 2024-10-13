@@ -62,18 +62,6 @@ btnMoveFlashSaleRight.addEventListener('click', function(){
 })
 // Hết phần di chuyển slide Flash Sale
 
-var wrapper = document.body;
-var prevScrollpos = wrapper.scrollTop;
-wrapper.onscroll = function() {
-  var currentScrollPos = wrapper.scrollTop;
-  if (prevScrollpos > currentScrollPos) {
-    document.getElementById("headerID").style.top = "0";
-    alert();
-    window.scrollTo(0,0);
-    prevScrollpos = currentScrollPos;
-  } else if (currentScrollPos > prevScrollpos + 60){
-    document.getElementById("headerID").style.top = "-70px";
-    window.scrollTo(0,1);
-    prevScrollpos = currentScrollPos;
-  }
-}
+// Slide hình trong chi tiết sản phẩm
+
+// hết phần slide hình trong chi tiết sản phẩm

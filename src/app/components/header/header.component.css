@@ -2,7 +2,8 @@
 .header{
     /* background: rgb(254,98,50);
     background: linear-gradient(0deg, rgba(254,98,50,1) 0%, rgba(247,70,46,1) 100%); */
-    background-color: black;
+    background-color: #000000e8;
+    backdrop-filter: blur(10px);
     /* height: 115px; */
     margin: 0;
     position: fixed;
@@ -94,24 +95,24 @@
 }
 .header .rightHeader .btnCart .numberOfCart{
     position: absolute;
-    background-color: white;
+    background-color: #a61713;
     /* color: #f94d2f; */
-    color: #a61713;
+    color: white;
     padding: 0px 4px;
     border-radius: 50%;
     /* border: 1px solid #f94d2f; */
-    border: 1px solid #a61713;
+    border: 1px solid black;
     transform: translate(-2px, -8px);
 }
 .header .rightHeader .btnNotification .numberOfNotificate{
     position: absolute;
-    background-color: white;
+    background-color: #a61713;
     /* color: #f94d2f; */
-    color: #a61713;
+    color: white;
     padding: 0px 4px;
     border-radius: 50%;
     /* border: 1px solid #f94d2f; */
-    border: 1px solid #a61713;
+    border: 1px solid black;
     transform: translate(-2px, -8px);
 }
 .header .rightHeader .btnProfileUser{
