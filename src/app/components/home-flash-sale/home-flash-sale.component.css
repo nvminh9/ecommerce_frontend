@@ -169,4 +169,14 @@
     .news{
         margin-top: 62px;
     }
+    /*  */
+    .flashSale{
+        margin: 0;
+        margin-top: 0px;
+    }
+    .flashSale .col{
+        background-color: white;
+        border-radius: 0px;
+        padding: 0;
+    }
 }

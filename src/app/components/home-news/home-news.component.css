@@ -99,19 +99,16 @@
     cursor: pointer;
 }
 .news .rightNewsSub1{
-    margin: 4px;
+    padding: 0px 0px 2px 4px;
     height: 100%;
     border-radius: 4px;
 }
 .news .rightNewsSub2{
-    margin: 4px;
-    height: 97%;
+    padding: 2px 0px 0px 4px;
+    padding-bottom: 0px;
+    height: 100%;
     border-radius: 4px;
 }
-.news .rightNewsSub1{
-    margin-top: 0px;
-}   
-
 /* Hết CSS News */
 
 
@@ -120,13 +117,13 @@
 /***** 1. Thiết bị có kích thước màn hình 740px - 1023px (màn hình tablet và laptop nhỏ) *****/
 @media (min-width: 740px) and (max-width: 1023px) {
     .news{
-        margin-top: 102px;
+        /* margin-top: 102px; */
     }
 }
 /***** 2. Thiết bị có kích thước màn hình 1024px - 1239px (màn của PC or Laptop) *****/
 @media (min-width: 1024px) and (max-width: 1239px) {
     .news{
-        margin-top: 102px;
+        /* margin-top: 102px; */
     }
 }
 /***** 3. Thiết bị có kích thước màn hình >= 740px (màn từ Tablet trở lên) *****/
@@ -136,16 +133,40 @@
 /***** 4. Thiết bị có kích thước màn hình >= 1113px (PC or Laptop có màn lớn) *****/
 @media (min-width: 1113px){
     .news{
-        margin-top: 102px;
+        /* margin-top: 102px; */
     }
 }
 /***** 5. Thiết bị có kích thước màn hình <= 600px (Điện thoại) *****/
 @media (max-width: 600px){
     /* News */
     .news .col{
-        padding: 30px 10px;
+        padding: 20px 10px;
+        display: grid;
+        align-items: center;
     }
     .news{
-        margin-top: 62px;
+        /* margin-top: 62px; */
+    }
+    .news .leftNews{
+        /* background-color: black; */
+        height: 100%;
+        width: 100%;
+        border-radius: 4px;
+    }
+    .news .rightNews{
+        height: 100%;
+        width: 100%;
+        display: flex;
+    } 
+    .news .rightNewsSub1{
+        padding: 4px 2px 0px 0px;
+        height: 100%;
+        border-radius: 4px;
+    }
+    .news .rightNewsSub2{
+        padding: 4px 0px 0px 2px;
+        padding-bottom: 0px;
+        height: 100%;
+        border-radius: 4px;
     }
 }

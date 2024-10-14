@@ -36,7 +36,7 @@
 /* CSS phần đầu tiên (thông tin của sản phẩm) */
 .productDetailInfo{
     margin: 0;
-    margin-top: 102px;
+    /* margin-top: 102px; */
 }
 .productDetailInfo .productInfoContainer{ 
     padding: 10px;
@@ -802,7 +802,7 @@
 /***** 5. Thiết bị có kích thước màn hình <= 600px (Điện thoại) *****/
 @media (max-width: 600px){
     .productDetailInfo{
-        margin-top: 60px;
+        /* margin-top: 60px; */
     }
     .productDetailInfo .productInfoContainer{ 
         display: grid;
