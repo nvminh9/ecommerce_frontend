@@ -6,19 +6,155 @@
     padding: 10px;
     margin-top: 15px;
     background-color: white;
-    border-radius: 4px;
+    border-radius: 4px 4px 0px 0px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    display: grid;
+    position: relative;
+    padding-bottom: 0px;
 }
 .shopInfoPageContainer .topOfShopInfoPage .shopInfo{
-    
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
 }
 .shopInfoPageContainer .topOfShopInfoPage .shopInfo .shopAvatar{
-    
+    background-image: url("https://cdn.tgdd.vn/Files/2018/06/26/1097545/tu-lanh-panasonic-la-thuong-hieu-cua-nuoc-nao-san-xuat-o-dau-9.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 40%;
+    border-radius: 4px;
+}
+.shopInfoPageContainer .topOfShopInfoPage .shopInfo .shopAvatar .shopAvatarDetail{
+    display: flex;
+    /* align-items: center; */
+    background-color: rgba(0,0,0,.6);
+    padding: 10px;
+    border-radius: 4px 4px 0px 0px;
+    width: 100%;
+}
+.shopInfoPageContainer .topOfShopInfoPage .shopInfo .shopAvatar .shopAvatarDetail img{
+    width: 80px;
+    height: 80px;
+    border: none;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    border: 5px solid rgba(248, 252, 255, 0.477);
+}
+.shopInfoPageContainer .topOfShopInfoPage .shopInfo .shopAvatar .shopAvatarDetail span{
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+    display: block;
+    padding: 10px;
+    padding-left: 20px;
+}
+.shopInfoPageContainer .topOfShopInfoPage .shopInfo .shopAvatar .btnOfShopInfoContainer{
+    display: flex;   
+    align-items: center;
+    background-color: rgba(0,0,0,.6);
+    padding: 10px;
+    border-radius: 0px 0px 4px 4px;
+    width: 100%;
+}
+.shopInfoPageContainer .topOfShopInfoPage .shopInfo .shopAvatar .btnOfShopInfoContainer button{
+   margin: 5px;
+   border: .5px solid white;
+   background-color: transparent;
+   color: white;
+   width: 50%;
+   padding: 5px;
+   font-weight: 400;
+   border-radius: 4px;
+   cursor: pointer;
+}
+.shopInfoPageContainer .topOfShopInfoPage .shopInfo .shopAvatar .btnOfShopInfoContainer button:hover{
+    background-color: rgba(248, 252, 255, 0.093);
 }
 .shopInfoPageContainer .topOfShopInfoPage .shopInfo .shopNumeral{
-    
+    width: 60%;
+
+}
+.shopInfoPageContainer .topOfShopInfoPage .shopInfo .shopNumeral{
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    padding: 20px;
+    padding-left: 25px;
+}
+.shopInfoPageContainer .topOfShopInfoPage .shopInfo .shopNumeral span{
+    display: block;
+}
+.shopInfoPageContainer .topOfShopInfoPage .shopInfo .shopNumeral .shopNumeralRating{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px;
+    color: #333;
+    font-weight: 400;
+    font-size: 14px;
+    padding-right: 20px;
+}
+.shopInfoPageContainer .topOfShopInfoPage .shopInfo .shopNumeral .shopNumeralProduct{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px;
+    color: #333;
+    font-weight: 400;
+    font-size: 14px;
+    padding-left: 20px;
+}
+.shopInfoPageContainer .topOfShopInfoPage .shopInfo .shopNumeral .shopNumeralJoin{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px;
+    color: #333;
+    font-weight: 400;
+    font-size: 14px;
+    padding-right: 20px;
+}
+.shopInfoPageContainer .topOfShopInfoPage .shopInfo .shopNumeral .shopNumeralFollowers{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px;
+    color: #333;
+    font-weight: 400;
+    font-size: 14px;
+    padding-left: 20px;
 }
 
+.shopInfoPageContainer .topOfShopInfoPage .shopMenuNav{
+    /* position: absolute; */
+    bottom: 0;
+    padding: 0px 10px;
+    padding-bottom: 0px;
+}
+.shopInfoPageContainer .topOfShopInfoPage .shopMenuNav button{
+    background-color: transparent;
+    font-weight: 400;
+    color: #111;
+    font-size: 16px;
+    border: none;
+    padding: 15px 35px;
+    cursor: pointer;
+}
+.shopInfoPageContainer .topOfShopInfoPage .shopMenuNav .checked{
+    border-bottom: 2px solid #a61713;
+    color: #a61713;
+}
+
+.shopInfoPageContainer .topOfShopInfoPage .shopMenuNav button:hover{ 
+    color: #a61713;
+}
 .shopInfoPageContainer .mainOfShopInfoPage{
     padding: 10px;
     margin-top: 15px;
@@ -46,5 +182,35 @@
 }
 /***** 5. Thiết bị có kích thước màn hình <= 600px (Điện thoại) *****/
 @media (max-width: 600px){
-    
+    .shopInfoPageContainer .topOfShopInfoPage{
+        padding: 10px;
+        margin-top: 0px;
+        background-color: white;
+        border-radius: 4px 4px 0px 0px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+        display: grid;
+        padding-bottom: 0px;
+    }
+    .shopInfoPageContainer .topOfShopInfoPage .shopInfo{
+        display: grid;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 5px;
+    }
+    .shopInfoPageContainer .topOfShopInfoPage .shopMenuNav{
+        padding: 0px;
+    }
+    .shopInfoPageContainer .topOfShopInfoPage .shopInfo .shopAvatar{
+        width: 100%;    
+    }
+    .shopInfoPageContainer .topOfShopInfoPage .shopInfo .shopNumeral{
+        width: 100%;    
+        padding: 20px 0px;
+    }
+    .shopInfoPageContainer .topOfShopInfoPage .shopInfo .shopNumeral .shopNumeralRating{
+        padding-bottom: 5px;
+    }
+    .shopInfoPageContainer .topOfShopInfoPage .shopInfo .shopNumeral .shopNumeralProduct{
+        padding-bottom: 5px;
+    }
 }
