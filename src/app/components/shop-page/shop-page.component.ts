@@ -9,4 +9,8 @@ import { Component } from '@angular/core';
 })
 export class ShopPageComponent {
 
+  // Xử lý chuyển tab trong trang Shop
+  handleClickTabShopPage(e: any) {
+    
+  } 
 }
