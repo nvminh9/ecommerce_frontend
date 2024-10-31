@@ -1,0 +1,10 @@
+- Trang profile người dùng.
+- Trang Cart.
+- Trang Đăng ký, Đăng nhập.
+- Phần hiển thị đánh giá trong chi tiết sản phẩm sửa thành dạng Pagition (phân trang).
+- Thêm phần top tìm kiếm dưới thanh tìm kiếm. (ok)
+- Trang mua hàng.
+- Phần Shop Admin:
+    + Trang đăng ký thành seller
+    + Trang quản lý sản phẩm (CRUD)
+- Cấu trúc lại folder components;

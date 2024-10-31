@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "./components/header/header.component";
-import { HomeNewsComponent } from "./components/home-news/home-news.component";
-import { CategoryComponent } from "./components/category/category.component";
-import { HomeFlashSaleComponent } from "./components/home-flash-sale/home-flash-sale.component";
-import { AdvertiseComponent } from "./components/advertise/advertise.component";
-import { HomeSuggestComponent } from "./components/home-suggest/home-suggest.component";
+import { HomeNewsComponent } from "./components/home/components/home-news/home-news.component";
+import { CategoryComponent } from "./components/home/components/category/category.component";
+import { HomeFlashSaleComponent } from "./components/home/components/home-flash-sale/home-flash-sale.component";
+import { AdvertiseComponent } from "./components/home/components/advertise/advertise.component";
+import { HomeSuggestComponent } from "./components/home/components/home-suggest/home-suggest.component";
 import { FooterComponent } from "./components/footer/footer.component";
 
 

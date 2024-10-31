@@ -11,4 +11,8 @@ import { CommonModule } from '@angular/common';
 })
 export class HeaderComponent {
 
+  // open form search
+  openFormSearchOnMobile(): void{
+    
+  }
 }

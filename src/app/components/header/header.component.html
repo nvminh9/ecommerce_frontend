@@ -1,28 +1,86 @@
 <div id="headerID" class="row header">
     <div class="col l-10 l-o-1 m-10 m-o-1 c-10 c-o-1">
-        <div class="logo">
-            <img routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page" src="resource/img/logo-no-background.png" alt="">
+        <div class="topOfHeaderContainer">
+            <div class="left">
+                <a href="#" style="padding-left: 0px;">
+                    Kênh người bán
+                </a>
+                <a href="#" >
+                    Trở thành người bán WolfTechE
+                </a>
+                <a href="#" >
+                    Tải ứng dụng
+                </a>
+                <a href="#" style="border-right: none;">
+                    Kết nối <i class="fa-brands fa-facebook"></i> <i class="fa-brands fa-instagram" style="margin-left: 5px;"></i>
+                </a>
+            </div>
+            <div class="right">
+                <a href="#">
+                    <i class="fa-solid fa-phone"></i> Hỗ trợ
+                </a>
+            </div>
         </div>
-        <div class="search">
-            <form action="#">
-                <input type="text" placeholder="Tìm kiếm ...">
-                <button class="btnFindInSearch" type="submit">
+        <div class="bottomOfHeaderContainer">
+            <div class="logo">
+                <img routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page" src="resource/img/logo-no-background.png" alt="">
+            </div>
+            <div class="search">
+                <form action="#">
+                    <input type="text" placeholder="Tìm kiếm ...">
+                    <button class="btnFindInSearch" type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+                <div class="topSearchList">
+                    <a href="#">
+                        FreeFire
+                    </a>
+                    <a href="#">
+                        Áo khoác 
+                    </a>
+                    <a href="#">
+                        Iphone 16 pro max
+                    </a>
+                    <a href="#">
+                        Túi mù
+                    </a>
+                    <a href="#">
+                        Labubu
+                    </a>
+                    <a href="#">
+                        FreeFire
+                    </a>
+                    <a href="#">
+                        Áo khoác 
+                    </a>
+                    <a href="#">
+                        Iphone 16 pro max
+                    </a>
+                    <a href="#">
+                        Túi mù
+                    </a>
+                    <a href="#">
+                        Labubu
+                    </a>
+                </div>
+            </div>
+            <div class="rightHeader">
+                <button class="btnOpenFormSearch">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
-            </form>
-        </div>
-        <div class="rightHeader">
-            <button class="btnNotification">
-                <i class="fa-solid fa-bell"></i>
-                <span class="numberOfNotificate">0</span>
-            </button>
-            <button class="btnCart">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <span class="numberOfCart">0</span>
-            </button>
-            <button class="btnProfileUser">
-                <img src="resource/img/hình 3x4.png" alt="">
-            </button>
+                <button class="btnNotification">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="numberOfNotificate">0</span>
+                </button>
+                <button class="btnCart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="numberOfCart">0</span>
+                </button>
+                <button class="btnProfileUser" routerLink="profile-user/info">
+                    <img src="resource/img/hình 3x4.png" alt="">
+                </button>
+            </div>
         </div>
     </div>
 </div>
