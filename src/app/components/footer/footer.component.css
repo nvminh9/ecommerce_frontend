@@ -211,5 +211,11 @@
 }
 /***** 5. Thiết bị có kích thước màn hình <= 600px (Điện thoại) *****/
 @media (max-width: 600px){
-
+    .footer{
+        margin: 0;
+        margin-top: 30px;
+        background-color: #ffffff;
+        border-top: 5px solid #a61713;
+        display: none;
+    }
 }

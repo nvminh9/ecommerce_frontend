@@ -7,6 +7,7 @@ import { ShopPageComponent } from './components/shop-page/shop-page.component';
 import { ProfileUserComponent } from './components/profile-user/profile-user.component';
 import { UserInfoComponent } from './components/profile-user/components/user-info/user-info.component';
 import { OrderHistoryComponent } from './components/profile-user/components/order-history/order-history.component';
+import { CartComponent } from './components/cart/cart.component';
 
 export const routes: Routes = [
     {path: "", component: HomeComponent},
@@ -23,6 +24,7 @@ export const routes: Routes = [
             {path: 'order-history', component: OrderHistoryComponent},
         ],
     },
+    {path: "cart", component: CartComponent},
     
     {path: "**", component: NotFoundComponent} // route Not Found nên ở cuối cùng
 ];

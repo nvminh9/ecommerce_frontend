@@ -1,0 +1,122 @@
+<div class="row cartContainer">
+    <div class="col l-10 l-o-1 m-10 m-o-1 c-12 cart">
+        <!-- Thanh head của danh sách item giỏ hàng -->
+        <div class="topCart">
+            <span class="colProduct">Sản Phẩm</span>
+            <span class="colPrice">Đơn Giá</span>
+            <span class="colQuantity">Số Lượng</span>
+            <span class="colAmount">Số Tiền</span>
+            <span class="colOperation">Thao Tác</span>
+        </div>
+        <!-- Danh sách item giỏ hàng -->
+        <div class="listItemInCart">
+            <!-- Item -->
+            <div class="itemInCart">
+                <div class="top">
+                    <div class="leftTop">
+                        <span>David Austin</span>
+                        <button class="btnWatchShop" routerLink="/shop-page"><i class="fa-solid fa-store"></i> Xem Shop</button>
+                    </div>
+                </div>
+                <div class="mid">
+                    <div class="productInfo">
+                        <img routerLink="/product-detail" src="https://bouqs.com/cdn-cgi/image/height=454,fit=cover,quality=80,width=454,format=auto/media/W1siZiIsIjIwMjQvMDgvMjMvMTcvNDIvNDUvOTljODZmNTItMGM0MC00MDkwLTgzZDItNTJkYzZjY2RkOTBkL0ZBTEwyNF9ERUxJTEFIX09TXzAyNTNfV2ViLmpwZyJdXQ/FALL24_DELILAH_OS_0253_Web.jpg?sha=1fdacf040343961d" alt="">
+                        <span routerLink="/product-detail">100 Red Roses</span>
+                        <select name="" id="">
+                            <option value="small">Small</option>
+                            <option value="large">Large</option>
+                        </select>
+                    </div>
+                    <div class="productPrice">
+                        <span>415.000</span>
+                    </div>
+                    <div class="productQuantity">
+                        <input type="number" [defaultValue]="1">
+                    </div>
+                    <div class="productAmount">
+                        <span>415.000 vnđ</span>
+                    </div>
+                    <div class="operation">
+                        <button class="btnRemoveItem">Xóa</button>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <span><i class="fa-solid fa-truck-fast" aria-hidden="true"></i> Miễn phí vận chuyển</span>
+                </div>
+            </div>
+            <!-- Item -->
+            <div class="itemInCart">
+                <div class="top">
+                    <div class="leftTop">
+                        <span>Luxury Flower</span>
+                        <button class="btnWatchShop" routerLink="/shop-page"><i class="fa-solid fa-store"></i> Xem Shop</button>
+                    </div>
+                </div>
+                <div class="mid">
+                    <div class="productInfo">
+                        <img routerLink="/product-detail" src="https://eu.davidaustinroses.com/cdn/shop/files/6bbfa5054282f6dcf50875746068601a_ae52e08a-7722-4cb0-8ad8-8ae77107c568.jpg?v=1725443687&width=414" alt="">
+                        <span routerLink="/product-detail">Penelope Lively</span>
+                        <select name="" id="">
+                            <option value="small">Small</option>
+                            <option value="large">Large</option>
+                        </select>
+                    </div>
+                    <div class="productPrice">
+                        <span>850.000</span>
+                    </div>
+                    <div class="productQuantity">
+                        <input type="number" [defaultValue]="1">
+                    </div>
+                    <div class="productAmount">
+                        <span>850.000 vnđ</span>
+                    </div>
+                    <div class="operation">
+                        <button class="btnRemoveItem">Xóa</button>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <span><i class="fa-solid fa-truck-fast" aria-hidden="true"></i> Miễn phí vận chuyển</span>
+                </div>
+            </div>
+            <!-- Item -->
+            <div class="itemInCart">
+                <div class="top">
+                    <div class="leftTop">
+                        <span>Bouqs</span>
+                        <button class="btnWatchShop" routerLink="/shop-page"><i class="fa-solid fa-store"></i> Xem Shop</button>
+                    </div>
+                </div>
+                <div class="mid">
+                    <div class="productInfo">
+                        <img routerLink="/product-detail" src="https://eu.davidaustinroses.com/cdn/shop/products/4840d4a82c3bac9164f3bb9e7739962c.jpg?v=1660573816&width=414" alt="">
+                        <span routerLink="/product-detail">The Generous Gardener</span>
+                        <select name="" id="">
+                            <option value="small">Small</option>
+                            <option value="large">Large</option>
+                        </select>
+                    </div>
+                    <div class="productPrice">
+                        <span>1.450.000</span>
+                    </div>
+                    <div class="productQuantity">
+                        <input type="number" [defaultValue]="1">
+                    </div>
+                    <div class="productAmount">
+                        <span>1.450.000 vnđ</span>
+                    </div>
+                    <div class="operation">
+                        <button class="btnRemoveItem">Xóa</button>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <span><i class="fa-solid fa-truck-fast" aria-hidden="true"></i> Miễn phí vận chuyển</span>
+                </div>
+            </div>
+        </div>
+        <!-- Thanh đặt hàng -->
+        <div class="bottomCart">
+            <span>Tổng thanh toán: <span style="color: #a61713; font-size: 22px; font-weight: 400;">2.715.000 vnđ</span></span>
+            <button class="btnOrder">Đặt Hàng</button>
+        </div>
+    </div>
+</div>
