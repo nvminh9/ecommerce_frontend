@@ -49,6 +49,7 @@
     padding: 10px;
     border: .5px solid#efefef;
     border-radius: 4px;
+    color: black;
 }
 .userInfo .formEditInfo form .btnSave{
 
@@ -102,6 +103,7 @@
     /* cursor: pointer; */
     border-radius: 4px;
     transition: all .2s;
+    color: black;
 }
 .userInfo .formEditInfo form .avatar .btnChooseImage:hover{
     /* background-color: #efefef; */

@@ -1,3 +1,7 @@
+#backHeaderID{
+    width: 100%;
+    height: 131px;
+}
 .cartContainer{
     margin: 0;
 }
@@ -13,6 +17,7 @@
     display: flex;
     position: sticky;
     top: 130px;
+    z-index: 1;
 }
 .cartContainer .cart .topCart .colProduct{
     width: 50%;
@@ -198,7 +203,9 @@
     cursor: pointer;
     margin-top: 10px;
 }
-
+.cartContainer .cart .bottomCart button:hover{
+    background-color: #84130f;
+}
 
 
 /*                           MEDIA QUERY                          */
@@ -220,6 +227,10 @@
 }
 /***** 5. Thiết bị có kích thước màn hình <= 600px (Điện thoại) *****/
 @media (max-width: 600px){
+    #backHeaderID{
+        width: 100%;
+        height: 60px;
+    }
     .cartContainer .cart{
         margin-top: 10px;
     }
@@ -232,6 +243,7 @@
         display: flex;
         position: sticky;
         top: 60px;
+        z-index: 1;
     }
     .cartContainer .cart .topCart .colProduct{
         width: 35%;
