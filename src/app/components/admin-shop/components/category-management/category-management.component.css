@@ -37,7 +37,7 @@
     cursor: pointer;
     transition: all .1s;
 }
-.categoryManagementContainer .categoryTable .titleTable .btnAddCategory{
+.categoryManagementContainer .categoryTable .titleTable .btnAddCategory:hover{
     background-color: #19703d;
 }
 .categoryManagementContainer .categoryTable .titleTable span{

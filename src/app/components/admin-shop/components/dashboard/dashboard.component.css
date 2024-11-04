@@ -119,7 +119,7 @@
 /***** 5. Thiết bị có kích thước màn hình <= 600px (Điện thoại) *****/
 @media (max-width: 600px){
     .dashboardContainer .numeralBox .numeralContainer{
-    width: 50%;
+    width: 100%;
     padding: 10px;
 }
 }

@@ -15,6 +15,7 @@ import { AdminShopComponent } from './components/admin-shop/admin-shop.component
 import { DashboardComponent } from './components/admin-shop/components/dashboard/dashboard.component';
 import { ProductManagementComponent } from './components/admin-shop/components/product-management/product-management.component';
 import { CategoryManagementComponent } from './components/admin-shop/components/category-management/category-management.component';
+import { AddProductComponent } from './components/admin-shop/components/add-product/add-product.component';
 
 export const routes: Routes = [
     {path: "", component: PublicComponent, 
@@ -40,8 +41,13 @@ export const routes: Routes = [
         children: [
             {path: "", component: DashboardComponent},
             {path: "dashboard", component: DashboardComponent},
-            {path: "product-management", component: ProductManagementComponent},
+            {path: "product-management", component: ProductManagementComponent,
+                children: [
+                    {path: "add-product", component: AddProductComponent},
+                ],
+            },
             {path: "category-management", component: CategoryManagementComponent},
+            {path: "add-product", component: AddProductComponent},
         ],
     }, // trang admin của shop
     {path: "sign-in", component: SignInComponent}, // trang đăng nhập
