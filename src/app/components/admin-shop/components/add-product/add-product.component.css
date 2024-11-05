@@ -29,6 +29,44 @@
     align-items: center;
     margin: 10px 0px;
 }
+.addProductContainer .formAddProduct form .inputWrapper .detailPreviewBox{
+    display: grid;
+    align-items: center;
+    width: 60%;
+}
+.addProductContainer .formAddProduct form .inputWrapper .detailPreviewBox .btnDeleteDetail{
+    border: .5px solid #c0392b;
+    padding: 10px 5px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #c0392b;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    cursor: pointer;
+    transition: all .1s;
+}
+.addProductContainer .formAddProduct form .inputWrapper .detailPreviewBox .btnDeleteDetail:hover{
+    background-color: #c0392b;
+    color: whitesmoke;
+}
+.addProductContainer .formAddProduct form .inputWrapper .detailPreviewBox span{
+    padding: 5px;
+}
+.addProductContainer .formAddProduct form .inputWrapper .btnAddDetail{
+    border: .5px solid #27ae60;
+    padding: 10px 5px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #27ae60;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    cursor: pointer;
+    transition: all .1s;
+}
+.addProductContainer .formAddProduct form .inputWrapper .btnAddDetail:hover{
+    background-color: #27ae60;
+    color: whitesmoke;
+}
 .addProductContainer .formAddProduct form .inputWrapper .imagePreviewBox{
     display: flex;   
     width: 60%;

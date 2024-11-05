@@ -9,7 +9,67 @@ import { Component } from '@angular/core';
 })
 export class AddProductComponent {
 
-  // Handle preview product images
+
+
+  // Handle Thêm chi tiết
+  handleAddDetail(): void{
+    let nameDetail: any;
+    let valueDetail: any;
+    //
+    nameDetail = (document.getElementById('nameDetailID') as HTMLInputElement).value;
+    valueDetail = (document.getElementById('valueDetailID') as HTMLInputElement).value;
+    // Tạo div chính
+    const div = document.createElement("div");
+    div.id = `${nameDetail}ID`
+    div.className = "detailPreviewBox";
+    div.style.display = "flex";
+    div.style.alignItems = "center";
+    div.style.justifyContent = "space-between";
+    div.style.width = "100%";
+    // Tạo span để chứa tên chi tiết
+    const spanNameDetail = document.createElement("span");
+    spanNameDetail.style.display = "block";
+    spanNameDetail.style.color = "#333";
+    spanNameDetail.style.fontWeight = "400";
+    spanNameDetail.style.padding = "10px";
+    spanNameDetail.textContent = nameDetail;
+    // Tạo span để chứa giá trị chi tiết
+    const spanValueDetail = document.createElement("span");
+    spanValueDetail.style.display = "block";
+    spanValueDetail.style.color = "black";
+    spanValueDetail.style.fontWeight = "500";
+    spanValueDetail.style.padding = "10px";
+    spanValueDetail.style.textAlign = "left";
+    spanValueDetail.textContent = valueDetail;
+    // Tạo button Xóa
+    const buttonDeleteDetail = document.createElement("button");
+    buttonDeleteDetail.className = "btnDeleteDetail";
+    buttonDeleteDetail.style.border = ".5px solid #c0392b";
+    buttonDeleteDetail.style.padding = "10px 5px";
+    buttonDeleteDetail.style.fontSize = "12px";
+    buttonDeleteDetail.style.fontWeight = "600";
+    buttonDeleteDetail.style.color = "#c0392b";
+    buttonDeleteDetail.style.borderRadius = "4px";
+    buttonDeleteDetail.style.boxShadow = "rgba(0, 0, 0, 0.05) 0px 0px 0px 1px";
+    buttonDeleteDetail.style.cursor = "pointer";
+    buttonDeleteDetail.style.transition = "all .1s";
+    buttonDeleteDetail.textContent = "Xóa";
+    buttonDeleteDetail.type = "button";
+    buttonDeleteDetail.addEventListener('click', function(){
+      (document.getElementById(`${nameDetail}ID`) as HTMLElement).style.display = "none";
+    })
+    // button.onclick = handleDeleteVariant();
+    // Ghép các phần tử vào div chính
+    div.appendChild(spanNameDetail);
+    div.appendChild(spanValueDetail);
+    div.appendChild(buttonDeleteDetail);
+    if(nameDetail && valueDetail){
+      (document.getElementById('detailPreviewBoxID') as HTMLElement).appendChild(div);
+      (document.getElementById('nameDetailID') as HTMLInputElement).value = "";
+      (document.getElementById('valueDetailID') as HTMLInputElement).value = "";
+    }
+  }
+  // Handle xem trước ảnh sản phẩm
   handlePreviewProductImages(): void{
     // tạo URL ảo cho từng ảnh được chọn
     let previewImageFile = [];
@@ -31,13 +91,7 @@ export class AddProductComponent {
       (document.getElementById('imagePreviewID5') as HTMLImageElement).src = previewImageURL[4];
     }
   }
-
-  //
-  handleDeleteVariant(): void{
-
-  }
-
-  // Handle Preview Variant
+  // Handle thêm / xem trước biến thể
   handlePreviewVariant(this: any): void{
     // this.preventDefault();
     let previewVariantName: any;
@@ -114,6 +168,10 @@ export class AddProductComponent {
     button.style.cursor = "pointer";
     button.style.transition = "all .1s";
     button.textContent = "Xóa";
+    button.type = "button";
+    button.addEventListener('click', function(){
+      (document.getElementById(`${previewVariantName}ID`) as HTMLElement).style.display = 'none';
+    })
     // button.onclick = handleDeleteVariant();
 
     // Ghép các phần tử vào div chính
@@ -122,24 +180,11 @@ export class AddProductComponent {
     div.appendChild(spanPrice);
     div.appendChild(spanQuantity);
     div.appendChild(button);
-    (document.getElementById('previewVariantBoxID') as HTMLElement).appendChild(div);
-  }
-
-  // Thay đổi ảnh đại diện khi chọn ảnh mới (xem trước)
-  handleProfileCoverImageUpdate(): void{
-    // xóa Object URL trước đó
-    const oldImagePreview = (document.getElementById('avatarInfoID') as HTMLImageElement).src;
-    URL.revokeObjectURL(oldImagePreview);
-    // tạo URL ảo để hiện khi chọn hình khác từ máy
-    // const fileCoverImage = avatarInfoID.target.files[0];
-    const fileCoverImage = (document.getElementById('btnChooseImageID') as any).files[0];
-    if (fileCoverImage) {
-        let fileCoverImagePreview = URL.createObjectURL(fileCoverImage);
-        // Url ảo cho ảnh bìa
-        // setProfileCoverImagePreview(fileCoverImagePreview);
-        (document.getElementById('avatarInfoID') as HTMLImageElement).src = fileCoverImagePreview;
+    if(previewVariantName && previewVariantPrice && previewVariantQuantity){
+      (document.getElementById('previewVariantBoxID') as HTMLElement).appendChild(div);
+      (document.getElementById('nameVariantID') as HTMLInputElement).value = "";
+      (document.getElementById('priceVariantID') as HTMLInputElement).value = "";
+      (document.getElementById('quantityVariantID') as HTMLInputElement).value = "";
     }
-    //
-    console.log(URL.createObjectURL(fileCoverImage));
-  };
+  }
 }
