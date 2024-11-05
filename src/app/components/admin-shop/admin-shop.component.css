@@ -94,6 +94,14 @@
     align-items: center;
     justify-content: end;
 }   
+.mainContent .searchBox .btnExtendMenu{
+    display: none;
+}   
+.mainContent .searchBox img{
+    display: none;
+    height: 30px;
+    border-radius: 4px;
+}   
 .mainContent .searchBox input{
     border: .5px solid #efefef;
     border-radius: 8px;
@@ -132,5 +140,44 @@
 }
 /***** 5. Thiết bị có kích thước màn hình <= 600px (Điện thoại) *****/
 @media (max-width: 600px){
-    
+    .mainContent .searchBox{
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgba(255, 255, 255, 0.815);
+        backdrop-filter: blur(10px);
+        border-radius: 8px;
+        position: sticky;
+        top: 10px;
+    }  
+    .mainContent .searchBox img{
+        display: block;
+    }  
+    .mainContent .searchBox .btnExtendMenu{
+        display: block;
+        border: none;
+        background-color: #333;
+        border-radius: 4px;
+        cursor: pointer;
+    }   
+    .mainContent .searchBox .btnExtendMenu:hover{
+        background-color: #222;
+    }   
+    /* Left Nav Bar */
+    .adminShopContainer .leftNavBarContaner{
+        padding: 10px;
+        background-color: #f5f5f5;
+        /* position: absolute; */
+        z-index: 99;
+        bottom: 0;
+        top: 0;   
+    }
+    .adminShopContainer .leftNavBarContainer .leftNavBar{
+        background-color: white;
+        height: 100%;
+        /* border: .5px solid #efefef; */
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    }
 }

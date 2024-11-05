@@ -54,6 +54,11 @@
                 <input type="text" name="" id="" value="" placeholder="Loại sản phẩm">
             </div>
             <div class="inputWrapper">
+                <!-- Giá -->
+                <span>Giá</span>
+                <input type="number" name="" id="" value="" placeholder="Giá" [defaultValue]="">
+            </div>
+            <div class="inputWrapper">
                 <!-- Biến thể -->
                 <div class="inputImageWrapper">
                     <span style="width: 100%;">Biến thể</span>
@@ -62,9 +67,11 @@
                 <div class="variantsBox">
                     <!-- Phần nhập biến thể -->
                     <div class="variant" style="padding: 0px;">
-                        <input type="text" placeholder="Tên biến thể" style="width: 45%;" name="" id="nameVariantID">
-                        <input type="file" name="" id="imageVariantID" style="width: 45%; border:none;">
-                        <button type="button" class="btnAddVariant" style="width: 10%;" (click)="handlePreviewVariant()">Thêm</button>
+                        <input type="text" placeholder="Tên biến thể" style="width: 20%;" name="" id="nameVariantID">
+                        <input type="file" name="" id="imageVariantID" style="width: 20%; border:none;">
+                        <input type="number" name="" id="priceVariantID" value="" placeholder="Giá" style="width: 20%;">
+                        <input type="number" placeholder="Số lượng" name="" id="quantityVariantID" value="" [defaultValue]="" style="width: 20%;">
+                        <button type="button" class="btnAddVariant" style="width: 20%;" (click)="handlePreviewVariant()">Thêm</button>
                     </div>
                 </div>
             </div>

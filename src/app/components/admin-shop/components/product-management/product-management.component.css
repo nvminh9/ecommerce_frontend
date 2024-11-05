@@ -51,6 +51,11 @@
 .productManagementContainer .productTable .tableContainer table thead{
     border-bottom: .5px solid #efefef;
 }
+.productManagementContainer .productTable .tableContainer table thead tr{
+    position: sticky;
+    top: 0px;
+    background-color: white;
+}
 .productManagementContainer .productTable .tableContainer table thead td{
     text-align: center;
     padding: 15px 0px;

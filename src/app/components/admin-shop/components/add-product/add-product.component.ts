@@ -41,10 +41,14 @@ export class AddProductComponent {
   handlePreviewVariant(this: any): void{
     // this.preventDefault();
     let previewVariantName: any;
+    let previewVariantPrice: any;
+    let previewVariantQuantity: any;
     let previewVariantImage: any;
     let previewVariantImageURL: any;
     // lấy giá trị từ input, tạo URL ảo
     previewVariantName = (document.getElementById('nameVariantID') as HTMLInputElement).value;
+    previewVariantPrice = (document.getElementById('priceVariantID') as HTMLInputElement).value;
+    previewVariantQuantity = (document.getElementById('quantityVariantID') as HTMLInputElement).value;
     previewVariantImage = (document.getElementById('imageVariantID') as any).files[0];
     previewVariantImageURL = URL.createObjectURL(previewVariantImage);
     // show
@@ -59,25 +63,47 @@ export class AddProductComponent {
 
     // Tạo span để chứa tên biến thể
     const span = document.createElement("span");
-    span.style.width = "45%";
+    span.style.width = "20%";
     span.style.display = "block";
     span.style.color = "#222";
     span.style.fontWeight = "400";
     span.style.fontSize = "14px";
+    span.style.textAlign = "center";
     span.textContent = previewVariantName;
 
     // Tạo img
     const img = document.createElement("img");
     img.src = previewVariantImageURL;
     img.alt = "";
-    img.style.width = "150px";
-    img.style.height = "150px";
+    img.style.width = "20%";
+    // img.style.height = "150px";
+    img.style.textAlign = "center";
     img.style.borderRadius = "8px";
+
+    // Tạo span để chứa giá
+    const spanPrice = document.createElement("span");
+    spanPrice.style.width = "20%";
+    spanPrice.style.display = "block";
+    spanPrice.style.color = "#222";
+    spanPrice.style.fontWeight = "400";
+    spanPrice.style.fontSize = "14px";
+    spanPrice.style.textAlign = "center";
+    spanPrice.textContent = previewVariantPrice;
+
+    // Tạo span để chứa số lượng
+    const spanQuantity = document.createElement("span");
+    spanQuantity.style.width = "20%";
+    spanQuantity.style.display = "block";
+    spanQuantity.style.color = "#222";
+    spanQuantity.style.fontWeight = "400";
+    spanQuantity.style.fontSize = "14px";
+    spanQuantity.style.textAlign = "center";
+    spanQuantity.textContent = previewVariantQuantity;
 
     // Tạo button Xóa
     const button = document.createElement("button");
     button.className = "btnDeleteVariant";
-    button.style.width = "10%";
+    button.style.width = "20%";
     button.style.border = ".5px solid #c0392b";
     button.style.padding = "10px 5px";
     button.style.fontSize = "12px";
@@ -93,6 +119,8 @@ export class AddProductComponent {
     // Ghép các phần tử vào div chính
     div.appendChild(span);
     div.appendChild(img);
+    div.appendChild(spanPrice);
+    div.appendChild(spanQuantity);
     div.appendChild(button);
     (document.getElementById('previewVariantBoxID') as HTMLElement).appendChild(div);
   }
