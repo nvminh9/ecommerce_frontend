@@ -20,35 +20,38 @@
                 <!-- Email -->
                 <div class="emailBox">
                     <!-- <span>Email</span> -->
-                    <input type="email" name="" id="" value="" placeholder="Email">
+                    <input type="email" name="email" id="email" value="" placeholder="Email" #email>
                 </div>
                 <!-- Mật khẩu -->
                 <div class="passwordBox">
                     <!-- <span>Mật khẩu</span> -->
-                    <input type="password" name="" id="" value="" placeholder="Mật khẩu">
+                    <input type="password" name="password" id="" value="" placeholder="Mật khẩu" #password>
                 </div>
                 <!-- Tên -->
                 <div class="emailBox">
-                    <input type="text" placeholder="Họ và tên" name="" id="" value="">
+                    <input type="text" placeholder="Họ và tên" name="fullname" id="" value="" #fullname>
+                </div>
+                <div class="emailBox">
+                    <input type="file" placeholder="avatar" name="avatar" (change)="onFileSelected($event)" id="" value="" #avatar>
                 </div>
                 <!-- Số điện thoại -->
                 <div class="emailBox">
-                    <input type="tel" placeholder="Số điện thoại" name="" id="" value="" maxlength="10">
+                    <input type="text" placeholder="Số điện thoại" name="phone" id="" value="" maxlength="10" #phone>
                 </div>
                 <!-- Ngày sinh -->
                 <div class="emailBox">
-                    <input type="date" style="width: 100%; color: black;">
+                    <input type="date" style="width: 100%; color: black;" #birthday>
                 </div>
                 <!-- Giới tính -->
                 <div class="genderBox">
-                    <select name="" id="">
+                    <select name="" id="" #gender>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                     </select>
                 </div>
                 <!-- Nút xác nhận -->
                 <div class="signUpBtnBox">
-                    <button type="submit">Đăng ký</button>
+                    <button type="button" (click)="register_user(email,password,fullname,phone,birthday,gender)">Đăng ký</button>
                 </div>
             </form>
             <div class="toSignUp">

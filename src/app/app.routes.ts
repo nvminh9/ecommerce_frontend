@@ -17,6 +17,9 @@ import { ProductManagementComponent } from './components/admin-shop/components/p
 import { CategoryManagementComponent } from './components/admin-shop/components/category-management/category-management.component';
 import { AddProductComponent } from './components/admin-shop/components/add-product/add-product.component';
 
+import { authGuard } from './auth.guard';
+
+
 export const routes: Routes = [
     {path: "", component: PublicComponent, 
         children: [
@@ -37,7 +40,7 @@ export const routes: Routes = [
             {path: "cart", component: CartComponent}, // trang giỏ hàng
         ],
     },
-    {path: "admin-shop", component: AdminShopComponent,
+    {path: "admin-shop", component: AdminShopComponent, canActivate: [authGuard],
         children: [
             {path: "", component: DashboardComponent},
             {path: "dashboard", component: DashboardComponent},

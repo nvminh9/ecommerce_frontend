@@ -10,7 +10,7 @@
             <div class="inputWrapper">
                 <!-- Tên sản phẩm -->
                 <span>Tên sản phẩm</span>
-                <input type="text" placeholder="Tên sản phẩm" value="" name="" id="">
+                <input type="text" placeholder="Tên sản phẩm" value="" name="product_name" id="" #product_name>
             </div>
             <div class="inputWrapper">
                 <!-- Hình sản phẩm -->
@@ -18,7 +18,7 @@
                     <span style="width: 100%;">Hình sản phẩm</span>
                     <span style="padding: 3px 0px; color: #555; font-weight: 400; font-size: 12px; width: 100%;">Chọn 5 hình cho sản phẩm</span>
                 </div>
-                <input type="file" placeholder="" value="" name="" id="productImagesID" multiple style="border:none;" autocomplete="off" (change)="handlePreviewProductImages()">
+                <input type="file" placeholder="" value="" name="img_product" id="productImagesID" multiple style="border:none;" autocomplete="off" (change)="handlePreviewProductImages() ; isFileSelected($event)" #img_product>
             </div>
             <div class="inputWrapper">
                 <span></span>
@@ -39,24 +39,24 @@
             <div class="inputWrapper">
                 <!-- Miêu tả ngắn cho sản phẩm -->
                 <span>Miêu tả ngắn</span>
-                <textarea type="text" placeholder="Miêu tả ngắn" name="" id=""></textarea>
+                <textarea type="text" placeholder="Miêu tả ngắn" name="product_short_description" id="" #product_short_description></textarea>
                 <!-- <input type="text" placeholder="Miêu tả ngắn" value="" name="" id=""> -->
             </div>
             <div class="inputWrapper">
                 <!-- Miêu tả chi tiết cho sản phẩm -->
                 <span>Miêu tả chi tiết</span>
-                <textarea type="text" placeholder="Miêu tả chi tiết" name="" id=""></textarea>
+                <textarea type="text" placeholder="Miêu tả chi tiết" name="product_description" id="" #product_description></textarea>
                 <!-- <input type="text" name="" id="" value="" placeholder="Miêu tả chi tiết"> -->
             </div>
             <div class="inputWrapper">
                 <!-- Loại sản phẩm -->
                 <span>Loại sản phẩm</span>
-                <input type="text" name="" id="" value="" placeholder="Loại sản phẩm">
+                <input type="text" name="categoriesID" id="" value="" placeholder="Loại sản phẩm" #categoriesID>
             </div>
             <div class="inputWrapper">
                 <!-- Giá -->
                 <span>Giá</span>
-                <input type="number" name="" id="" value="" placeholder="Giá" [defaultValue]="">
+                <input type="number" name="product_supp_price" id="" value="" placeholder="Giá" [defaultValue]="" #product_supp_price>
             </div>
             <div class="inputWrapper">
                 <!-- Biến thể -->
@@ -67,10 +67,10 @@
                 <div class="variantsBox">
                     <!-- Phần nhập biến thể -->
                     <div class="variant" style="padding: 0px;">
-                        <input type="text" placeholder="Tên biến thể" style="width: 20%;" name="" id="nameVariantID">
-                        <input type="file" name="" id="imageVariantID" style="width: 20%; border:none;">
-                        <input type="number" name="" id="priceVariantID" value="" placeholder="Giá" style="width: 20%;">
-                        <input type="number" placeholder="Số lượng" name="" id="quantityVariantID" value="" [defaultValue]="" style="width: 20%;">
+                        <input type="text" placeholder="Tên biến thể" style="width: 20%;" name="variant_name" id="nameVariantID" #variant_name>
+                        <input type="file" name="product_variants_img" id="imageVariantID" style="width: 20%; border:none;" #product_variants_img>
+                        <input type="number" name="price" id="priceVariantID" value="" placeholder="Giá" style="width: 20%;" price>
+                        <input type="number" placeholder="Số lượng" name="in_stock" id="quantityVariantID" value="" [defaultValue]="" style="width: 20%;" #in_stock>
                         <button type="button" class="btnAddVariant" style="width: 20%;" (click)="handlePreviewVariant()">Thêm</button>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                 </div>
             </div>
             <!-- Lưu -->
-            <button type="submit" class="btnSave">Xác nhận</button>
+            <button type="button" class="btnSave" >Xác nhận</button>
         </form>
     </div>
 </div>

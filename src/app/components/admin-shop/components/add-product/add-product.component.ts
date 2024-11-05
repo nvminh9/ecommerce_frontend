@@ -8,6 +8,38 @@ import { Component } from '@angular/core';
   styleUrl: './add-product.component.css'
 })
 export class AddProductComponent {
+  constructor(){}
+
+
+  selectedFile: File[] = []
+  img_product :File | null = null
+
+  details : any = {
+    name: '',
+    value: ''
+  }
+  product_details :any = []
+
+
+  isFileSelected(event:any){
+    if(event.target.files.length > 0){
+      this.selectedFile = Array.from(event.target.files) 
+      //console.log(this.selectedFile.length);
+    }
+  }
+ // alert("ok") không thể đặt alert() hay log ra được ngoài component , chỉ có thể gọi bên trong 1 hàm nào đó mới được
+  
+  add_product_details(){
+
+  }
+
+  //create_product(product_name:any,product_short_description:any, product_description:any,categoriesID:any,product_supp_price:any,
+
+
+
+
+
+
 
   // Handle preview product images
   handlePreviewProductImages(): void{
