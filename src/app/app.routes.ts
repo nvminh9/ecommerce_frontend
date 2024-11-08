@@ -18,6 +18,8 @@ import { CategoryManagementComponent } from './components/admin-shop/components/
 import { AddProductComponent } from './components/admin-shop/components/add-product/add-product.component';
 
 import { authGuard } from './auth.guard';
+import { EditProductComponent } from './components/admin-shop/components/edit-product/edit-product.component';
+import { DetailProductComponent } from './components/admin-shop/components/detail-product/detail-product.component';
 
 
 export const routes: Routes = [
@@ -47,10 +49,14 @@ export const routes: Routes = [
             {path: "product-management", component: ProductManagementComponent,
                 children: [
                     {path: "add-product", component: AddProductComponent},
+                    {path: "edit-product", component: EditProductComponent},
+                    {path: "detail-product", component: DetailProductComponent},
                 ],
             },
             {path: "category-management", component: CategoryManagementComponent},
             {path: "add-product", component: AddProductComponent},
+            {path: "edit-product", component: EditProductComponent},
+            {path: "detail-product", component: DetailProductComponent},
         ],
     }, // trang admin của shop
     {path: "sign-in", component: SignInComponent}, // trang đăng nhập

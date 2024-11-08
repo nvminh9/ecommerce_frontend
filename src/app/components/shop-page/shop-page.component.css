@@ -136,13 +136,17 @@
     padding-left: 20px;
 }
 
-.shopInfoPageContainer .topOfShopInfoPage .shopMenuNav{
-    /* position: absolute; */
-    bottom: 0;
-    padding: 0px 10px;
+.shopInfoPageContainer .shopMenuNav{    
+    padding: 0px;
     padding-bottom: 0px;
+    position: sticky;
+    top: 130px;
+    background-color: rgba(255, 255, 255, 0.815);
+    z-index: 2;
+    box-shadow: rgb(0 0 0 / 10%) 0px 7px 5px;
+    backdrop-filter: blur(15px);
 }
-.shopInfoPageContainer .topOfShopInfoPage .shopMenuNav button{
+.shopInfoPageContainer .shopMenuNav button{
     background-color: transparent;
     font-weight: 400;
     color: #111;
@@ -151,12 +155,12 @@
     padding: 15px 35px;
     cursor: pointer;
 }
-.shopInfoPageContainer .topOfShopInfoPage .shopMenuNav .checked{
+.shopInfoPageContainer .shopMenuNav .checked{
     border-bottom: 2px solid #a61713;
     color: #a61713;
 }
 
-.shopInfoPageContainer .topOfShopInfoPage .shopMenuNav button:hover{ 
+.shopInfoPageContainer .shopMenuNav button:hover{ 
     color: #a61713;
 }
 .shopInfoPageContainer .mainOfShopInfoPage{
@@ -380,7 +384,7 @@
 /* CSS phần Tất cả sản phẩm trong Shop page */
 .productListMain{
     display: flex;
-    margin-top: 35px;
+    margin-top: 40px;
 }
 /* phần bên trái */
 .productListMain .leftOfProductList{
@@ -410,6 +414,10 @@
     display: flex;
     align-items: center;
     padding: 5px 0px;
+}   
+.productListMain .leftOfProductList .filterBasePlace .filterBasePlaceCheckbox label{
+    cursor: pointer;
+    width: 100%;
 }   
 .productListMain .leftOfProductList .filterBasePlace input{
     color: #333;
@@ -550,6 +558,26 @@
     color: black;
     font-size: 12px;
 }
+.productListMain .rightOfProductList .listSuggest .btnSuggestItem .ratingOfProduct{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding: 0px 5px;
+    margin: -5px 0px;
+}
+.productListMain .rightOfProductList .listSuggest .btnSuggestItem .ratingOfProduct .starRatingOfProduct{
+    display: flex;
+}
+.productListMain .rightOfProductList .listSuggest .btnSuggestItem .ratingOfProduct .starRatingOfProduct span{
+    padding: 0;
+    margin: 0;
+    font-size: 13px;
+    font-weight: 600;
+}
+.productListMain .rightOfProductList .listSuggest .btnSuggestItem .ratingOfProduct .starRatingOfProduct .checked{ 
+    color: #a61713;
+    font-weight: 600;
+}
 .productListMain .rightOfProductList .listSuggest .btnSuggestItem img{
     width: 100%;
     border-radius: 5px 5px 0px 0px;
@@ -561,10 +589,17 @@
     text-align: left;
     padding: 5px;
     margin: 3px 0px;
+    line-height: 25px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .productListMain .rightOfProductList .btnOpenFilterProductList {
     display: none;
 }
+
 /* Phần pagination */
 .productListMain .rightOfProductList .pagination{
     width: fit-content;
@@ -586,6 +621,48 @@
 .productListMain .rightOfProductList .pagination a:hover:not(.active) {
     background-color: #ddd;
 }
+.productListMain .filterByPrice{
+    padding: 15px;
+    padding-top: 25px;
+    padding-bottom: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+.productListMain .filterByPrice span{
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    color: #111;
+    margin-right: 5px;
+}
+.productListMain .filterByPrice select{
+    margin: 0px 5px;
+    padding: 5px;
+    border: .5px solid #efefef;
+    background-color: white;
+    color: #111;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.productListMain .filterByPrice button{
+    border: .5px solid #a61713;
+    background: #a61713;
+    padding: 5px;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 400;
+}
+.productListMain .filterByPrice button:hover{
+    background: #971612;
+}
+/* Phần top của productListMain để thực hiện scroll đến (đẩy được productList xuống ko bị Header che)*/
+.topOfproductListMain{
+    height: 140px;
+}
+
 /* Hết css phần tất cả sản phẩm trong Shop page */
 
 /*                           MEDIA QUERY                          */
@@ -686,5 +763,18 @@
         font-weight: 300;
         color: #555;
         font-size: 10px;
+    }
+    .topOfproductListMain{
+        height: 70px;
+    }
+    .shopInfoPageContainer .shopMenuNav{    
+        padding: 0px;
+        padding-bottom: 0px;
+        position: sticky;
+        top: 60px;
+        background-color: rgba(255, 255, 255, 0.815);
+        z-index: 2;
+        box-shadow: rgb(0 0 0 / 10%) 0px 7px 5px;
+        backdrop-filter: blur(15px);
     }
 }

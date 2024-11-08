@@ -48,16 +48,16 @@
                 </div>
             </div>
         </div>
-        <div class="shopMenuNav">
-            <button class="checked">
-                Trang Chính
-            </button>
-            <a href="">
-                <button class="">
-                    Tất Cả Sản Phẩm
-                </button>
-            </a>
-        </div>
+        
+    </div>
+    <!-- Shop Menu Bar -->
+    <div class="col l-10 l-o-1 m-10 m-o-1 c-12 shopMenuNav">
+        <button id="btnHomeID" type="button" class="checked" (click)="handleClickTabShopPage('btnHomeID')">
+            Trang Chính
+        </button>
+        <button id="btnAllProductID" type="button" class="" (click)="handleClickTabShopPage('btnAllProductID')">
+            Tất Cả Sản Phẩm
+        </button>
     </div>
     <!-- Phần main của Shop Page -->
     <div class="col l-10 l-o-1 m-10 m-o-1 c-12 mainOfShopInfoPage">
@@ -183,6 +183,10 @@
                 </div>
             </div>
         </div>
+        <!-- Phần để scroll đến -->
+        <div id="topOfproductListMainID" class="topOfproductListMain">
+
+        </div>
         <!-- Phần list sản phẩm bán chạy -->
         <div id="productListMainID" class="productListMain">
             <div id="leftOfProductListID" class="leftOfProductList">
@@ -195,10 +199,10 @@
                 </div>
                 <div class="filterBasePlace">
                     <div class="filterBasePlaceCheckbox" style="color: #a61713;">Sản Phẩm</div>
-                    <div class="filterBasePlaceCheckbox"><input type="checkbox"> Tất cả sản phẩm</div>
-                    <div class="filterBasePlaceCheckbox"><input type="checkbox"> TV</div>
-                    <div class="filterBasePlaceCheckbox"><input type="checkbox"> Tủ lạnh</div>
-                    <div class="filterBasePlaceCheckbox"><input type="checkbox"> Máy giặt</div>
+                    <div class="filterBasePlaceCheckbox"><input type="checkbox" id="all"> <label for="all">Tất cả sản phẩm</label></div>
+                    <div class="filterBasePlaceCheckbox"><input type="checkbox" id="TV"> <label for="TV">TV</label></div>
+                    <div class="filterBasePlaceCheckbox"><input type="checkbox" id="Tủ lạnh"> <label for="Tủ lạnh">Tủ lạnh</label></div>
+                    <div class="filterBasePlaceCheckbox"><input type="checkbox" id="Máy giặt"> <label for="Máy giặt">Máy giặt</label></div>
                     <!-- <div class="filterBasePlaceCheckbox"><input type="checkbox"> Bình Dương</div>
                     <div class="filterBasePlaceCheckbox"><input type="checkbox"> Bà Rịa - Vùng Tàu</div> -->
                 </div>
@@ -213,6 +217,17 @@
                 <div class="btnOpenFilterProductList">
                     <button><span><i class="fa-solid fa-filter"></i> BỘ LỌC TÌM KIẾM</span></button>
                 </div>
+                <!-- Lọc theo giá -->
+                <div class="filterByPrice">
+                    <span>Sắp xếp theo</span>
+                    <form action="#" method="get">
+                        <select name="" id="">
+                            <option value="asc">Giá: Thấp đến Cao</option>
+                            <option value="desc">Giá: Cao đến Thấp</option>
+                        </select>
+                        <button type="submit">Áp dụng</button>
+                    </form>
+                </div>
                 <!-- List sản phẩm -->
                 <div class="row listSuggest">
                     <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
@@ -226,31 +241,24 @@
                                 <span class="suggestItemPrice">171.000 đ</span>
                                 <span class="suggestItemSold">Đã bán 7,5k</span>
                             </div>
-                        </button>
-                    </div>
-                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
-                        <button routerLink="/product-detail" class="btnSuggestItem">
-                            <div class="suggestItemSaleTag">
-                                -50%
-                            </div>
-                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
-                            <span>Combo 3 chai Nước giặt OMO</span>
-                            <div class="suggestItemPriceSale">
-                                <span class="suggestItemPrice">171.000 đ</span>
-                                <span class="suggestItemSold">Đã bán 7,5k</span>
-                            </div>
-                        </button>
-                    </div>
-                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
-                        <button routerLink="/product-detail" class="btnSuggestItem">
-                            <div class="suggestItemSaleTag">
-                                -50%
-                            </div>
-                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
-                            <span>Combo 3 chai Nước giặt OMO</span>
-                            <div class="suggestItemPriceSale">
-                                <span class="suggestItemPrice">171.000 đ</span>
-                                <span class="suggestItemSold">Đã bán 7,5k</span>
+                            <div class="ratingOfProduct">
+                                <div class="starRatingOfProduct">
+                                    <input id="starRatingOfProductID" type="text" hidden>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span style="
+                                    font-weight: 300; 
+                                    color: black; 
+                                    font-size: 13px;
+                                    padding: 0px;
+                                    margin: 8.5px 5px 5px 5px;"
+                                >
+                                    4
+                                </span>
                             </div>
                         </button>
                     </div>
@@ -265,31 +273,24 @@
                                 <span class="suggestItemPrice">171.000 đ</span>
                                 <span class="suggestItemSold">Đã bán 7,5k</span>
                             </div>
-                        </button>
-                    </div>
-                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
-                        <button routerLink="/product-detail" class="btnSuggestItem">
-                            <div class="suggestItemSaleTag">
-                                -50%
-                            </div>
-                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
-                            <span>Combo 3 chai Nước giặt OMO</span>
-                            <div class="suggestItemPriceSale">
-                                <span class="suggestItemPrice">171.000 đ</span>
-                                <span class="suggestItemSold">Đã bán 7,5k</span>
-                            </div>
-                        </button>
-                    </div>
-                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
-                        <button routerLink="/product-detail" class="btnSuggestItem">
-                            <div class="suggestItemSaleTag">
-                                -50%
-                            </div>
-                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
-                            <span>Combo 3 chai Nước giặt OMO</span>
-                            <div class="suggestItemPriceSale">
-                                <span class="suggestItemPrice">171.000 đ</span>
-                                <span class="suggestItemSold">Đã bán 7,5k</span>
+                            <div class="ratingOfProduct">
+                                <div class="starRatingOfProduct">
+                                    <input id="starRatingOfProductID" type="text" hidden>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span style="
+                                    font-weight: 300; 
+                                    color: black; 
+                                    font-size: 13px;
+                                    padding: 0px;
+                                    margin: 8.5px 5px 5px 5px;"
+                                >
+                                    4
+                                </span>
                             </div>
                         </button>
                     </div>
@@ -304,31 +305,24 @@
                                 <span class="suggestItemPrice">171.000 đ</span>
                                 <span class="suggestItemSold">Đã bán 7,5k</span>
                             </div>
-                        </button>
-                    </div>
-                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
-                        <button routerLink="/product-detail" class="btnSuggestItem">
-                            <div class="suggestItemSaleTag">
-                                -50%
-                            </div>
-                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
-                            <span>Combo 3 chai Nước giặt OMO</span>
-                            <div class="suggestItemPriceSale">
-                                <span class="suggestItemPrice">171.000 đ</span>
-                                <span class="suggestItemSold">Đã bán 7,5k</span>
-                            </div>
-                        </button>
-                    </div>
-                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
-                        <button routerLink="/product-detail" class="btnSuggestItem">
-                            <div class="suggestItemSaleTag">
-                                -50%
-                            </div>
-                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
-                            <span>Combo 3 chai Nước giặt OMO</span>
-                            <div class="suggestItemPriceSale">
-                                <span class="suggestItemPrice">171.000 đ</span>
-                                <span class="suggestItemSold">Đã bán 7,5k</span>
+                            <div class="ratingOfProduct">
+                                <div class="starRatingOfProduct">
+                                    <input id="starRatingOfProductID" type="text" hidden>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span style="
+                                    font-weight: 300; 
+                                    color: black; 
+                                    font-size: 13px;
+                                    padding: 0px;
+                                    margin: 8.5px 5px 5px 5px;"
+                                >
+                                    4
+                                </span>
                             </div>
                         </button>
                     </div>
@@ -343,31 +337,24 @@
                                 <span class="suggestItemPrice">171.000 đ</span>
                                 <span class="suggestItemSold">Đã bán 7,5k</span>
                             </div>
-                        </button>
-                    </div>
-                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
-                        <button routerLink="/product-detail" class="btnSuggestItem">
-                            <div class="suggestItemSaleTag">
-                                -50%
-                            </div>
-                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
-                            <span>Combo 3 chai Nước giặt OMO</span>
-                            <div class="suggestItemPriceSale">
-                                <span class="suggestItemPrice">171.000 đ</span>
-                                <span class="suggestItemSold">Đã bán 7,5k</span>
-                            </div>
-                        </button>
-                    </div>
-                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
-                        <button routerLink="/product-detail" class="btnSuggestItem">
-                            <div class="suggestItemSaleTag">
-                                -50%
-                            </div>
-                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
-                            <span>Combo 3 chai Nước giặt OMO</span>
-                            <div class="suggestItemPriceSale">
-                                <span class="suggestItemPrice">171.000 đ</span>
-                                <span class="suggestItemSold">Đã bán 7,5k</span>
+                            <div class="ratingOfProduct">
+                                <div class="starRatingOfProduct">
+                                    <input id="starRatingOfProductID" type="text" hidden>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span style="
+                                    font-weight: 300; 
+                                    color: black; 
+                                    font-size: 13px;
+                                    padding: 0px;
+                                    margin: 8.5px 5px 5px 5px;"
+                                >
+                                    4
+                                </span>
                             </div>
                         </button>
                     </div>
@@ -382,31 +369,24 @@
                                 <span class="suggestItemPrice">171.000 đ</span>
                                 <span class="suggestItemSold">Đã bán 7,5k</span>
                             </div>
-                        </button>
-                    </div>
-                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
-                        <button routerLink="/product-detail" class="btnSuggestItem">
-                            <div class="suggestItemSaleTag">
-                                -50%
-                            </div>
-                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
-                            <span>Combo 3 chai Nước giặt OMO</span>
-                            <div class="suggestItemPriceSale">
-                                <span class="suggestItemPrice">171.000 đ</span>
-                                <span class="suggestItemSold">Đã bán 7,5k</span>
-                            </div>
-                        </button>
-                    </div>
-                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
-                        <button routerLink="/product-detail" class="btnSuggestItem">
-                            <div class="suggestItemSaleTag">
-                                -50%
-                            </div>
-                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
-                            <span>Combo 3 chai Nước giặt OMO</span>
-                            <div class="suggestItemPriceSale">
-                                <span class="suggestItemPrice">171.000 đ</span>
-                                <span class="suggestItemSold">Đã bán 7,5k</span>
+                            <div class="ratingOfProduct">
+                                <div class="starRatingOfProduct">
+                                    <input id="starRatingOfProductID" type="text" hidden>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span style="
+                                    font-weight: 300; 
+                                    color: black; 
+                                    font-size: 13px;
+                                    padding: 0px;
+                                    margin: 8.5px 5px 5px 5px;"
+                                >
+                                    4
+                                </span>
                             </div>
                         </button>
                     </div>
@@ -421,31 +401,24 @@
                                 <span class="suggestItemPrice">171.000 đ</span>
                                 <span class="suggestItemSold">Đã bán 7,5k</span>
                             </div>
-                        </button>
-                    </div>
-                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
-                        <button routerLink="/product-detail" class="btnSuggestItem">
-                            <div class="suggestItemSaleTag">
-                                -50%
-                            </div>
-                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
-                            <span>Combo 3 chai Nước giặt OMO</span>
-                            <div class="suggestItemPriceSale">
-                                <span class="suggestItemPrice">171.000 đ</span>
-                                <span class="suggestItemSold">Đã bán 7,5k</span>
-                            </div>
-                        </button>
-                    </div>
-                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
-                        <button routerLink="/product-detail" class="btnSuggestItem">
-                            <div class="suggestItemSaleTag">
-                                -50%
-                            </div>
-                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
-                            <span>Combo 3 chai Nước giặt OMO</span>
-                            <div class="suggestItemPriceSale">
-                                <span class="suggestItemPrice">171.000 đ</span>
-                                <span class="suggestItemSold">Đã bán 7,5k</span>
+                            <div class="ratingOfProduct">
+                                <div class="starRatingOfProduct">
+                                    <input id="starRatingOfProductID" type="text" hidden>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span style="
+                                    font-weight: 300; 
+                                    color: black; 
+                                    font-size: 13px;
+                                    padding: 0px;
+                                    margin: 8.5px 5px 5px 5px;"
+                                >
+                                    4
+                                </span>
                             </div>
                         </button>
                     </div>
@@ -460,31 +433,24 @@
                                 <span class="suggestItemPrice">171.000 đ</span>
                                 <span class="suggestItemSold">Đã bán 7,5k</span>
                             </div>
-                        </button>
-                    </div>
-                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
-                        <button routerLink="/product-detail" class="btnSuggestItem">
-                            <div class="suggestItemSaleTag">
-                                -50%
-                            </div>
-                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
-                            <span>Combo 3 chai Nước giặt OMO</span>
-                            <div class="suggestItemPriceSale">
-                                <span class="suggestItemPrice">171.000 đ</span>
-                                <span class="suggestItemSold">Đã bán 7,5k</span>
-                            </div>
-                        </button>
-                    </div>
-                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
-                        <button routerLink="/product-detail" class="btnSuggestItem">
-                            <div class="suggestItemSaleTag">
-                                -50%
-                            </div>
-                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
-                            <span>Combo 3 chai Nước giặt OMO</span>
-                            <div class="suggestItemPriceSale">
-                                <span class="suggestItemPrice">171.000 đ</span>
-                                <span class="suggestItemSold">Đã bán 7,5k</span>
+                            <div class="ratingOfProduct">
+                                <div class="starRatingOfProduct">
+                                    <input id="starRatingOfProductID" type="text" hidden>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span style="
+                                    font-weight: 300; 
+                                    color: black; 
+                                    font-size: 13px;
+                                    padding: 0px;
+                                    margin: 8.5px 5px 5px 5px;"
+                                >
+                                    4
+                                </span>
                             </div>
                         </button>
                     </div>
@@ -499,31 +465,24 @@
                                 <span class="suggestItemPrice">171.000 đ</span>
                                 <span class="suggestItemSold">Đã bán 7,5k</span>
                             </div>
-                        </button>
-                    </div>
-                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
-                        <button routerLink="/product-detail" class="btnSuggestItem">
-                            <div class="suggestItemSaleTag">
-                                -50%
-                            </div>
-                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
-                            <span>Combo 3 chai Nước giặt OMO</span>
-                            <div class="suggestItemPriceSale">
-                                <span class="suggestItemPrice">171.000 đ</span>
-                                <span class="suggestItemSold">Đã bán 7,5k</span>
-                            </div>
-                        </button>
-                    </div>
-                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
-                        <button routerLink="/product-detail" class="btnSuggestItem">
-                            <div class="suggestItemSaleTag">
-                                -50%
-                            </div>
-                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
-                            <span>Combo 3 chai Nước giặt OMO</span>
-                            <div class="suggestItemPriceSale">
-                                <span class="suggestItemPrice">171.000 đ</span>
-                                <span class="suggestItemSold">Đã bán 7,5k</span>
+                            <div class="ratingOfProduct">
+                                <div class="starRatingOfProduct">
+                                    <input id="starRatingOfProductID" type="text" hidden>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span style="
+                                    font-weight: 300; 
+                                    color: black; 
+                                    font-size: 13px;
+                                    padding: 0px;
+                                    margin: 8.5px 5px 5px 5px;"
+                                >
+                                    4
+                                </span>
                             </div>
                         </button>
                     </div>
@@ -538,31 +497,24 @@
                                 <span class="suggestItemPrice">171.000 đ</span>
                                 <span class="suggestItemSold">Đã bán 7,5k</span>
                             </div>
-                        </button>
-                    </div>
-                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
-                        <button routerLink="/product-detail" class="btnSuggestItem">
-                            <div class="suggestItemSaleTag">
-                                -50%
-                            </div>
-                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
-                            <span>Combo 3 chai Nước giặt OMO</span>
-                            <div class="suggestItemPriceSale">
-                                <span class="suggestItemPrice">171.000 đ</span>
-                                <span class="suggestItemSold">Đã bán 7,5k</span>
-                            </div>
-                        </button>
-                    </div>
-                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
-                        <button routerLink="/product-detail" class="btnSuggestItem">
-                            <div class="suggestItemSaleTag">
-                                -50%
-                            </div>
-                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
-                            <span>Combo 3 chai Nước giặt OMO</span>
-                            <div class="suggestItemPriceSale">
-                                <span class="suggestItemPrice">171.000 đ</span>
-                                <span class="suggestItemSold">Đã bán 7,5k</span>
+                            <div class="ratingOfProduct">
+                                <div class="starRatingOfProduct">
+                                    <input id="starRatingOfProductID" type="text" hidden>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span style="
+                                    font-weight: 300; 
+                                    color: black; 
+                                    font-size: 13px;
+                                    padding: 0px;
+                                    margin: 8.5px 5px 5px 5px;"
+                                >
+                                    4
+                                </span>
                             </div>
                         </button>
                     </div>
@@ -577,6 +529,25 @@
                                 <span class="suggestItemPrice">171.000 đ</span>
                                 <span class="suggestItemSold">Đã bán 7,5k</span>
                             </div>
+                            <div class="ratingOfProduct">
+                                <div class="starRatingOfProduct">
+                                    <input id="starRatingOfProductID" type="text" hidden>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span style="
+                                    font-weight: 300; 
+                                    color: black; 
+                                    font-size: 13px;
+                                    padding: 0px;
+                                    margin: 8.5px 5px 5px 5px;"
+                                >
+                                    4
+                                </span>
+                            </div>
                         </button>
                     </div>
                     <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
@@ -590,6 +561,25 @@
                                 <span class="suggestItemPrice">171.000 đ</span>
                                 <span class="suggestItemSold">Đã bán 7,5k</span>
                             </div>
+                            <div class="ratingOfProduct">
+                                <div class="starRatingOfProduct">
+                                    <input id="starRatingOfProductID" type="text" hidden>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span style="
+                                    font-weight: 300; 
+                                    color: black; 
+                                    font-size: 13px;
+                                    padding: 0px;
+                                    margin: 8.5px 5px 5px 5px;"
+                                >
+                                    4
+                                </span>
+                            </div>
                         </button>
                     </div>
                     <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
@@ -602,6 +592,601 @@
                             <div class="suggestItemPriceSale">
                                 <span class="suggestItemPrice">171.000 đ</span>
                                 <span class="suggestItemSold">Đã bán 7,5k</span>
+                            </div>
+                            <div class="ratingOfProduct">
+                                <div class="starRatingOfProduct">
+                                    <input id="starRatingOfProductID" type="text" hidden>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span style="
+                                    font-weight: 300; 
+                                    color: black; 
+                                    font-size: 13px;
+                                    padding: 0px;
+                                    margin: 8.5px 5px 5px 5px;"
+                                >
+                                    4
+                                </span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
+                        <button routerLink="/product-detail" class="btnSuggestItem">
+                            <div class="suggestItemSaleTag">
+                                -50%
+                            </div>
+                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
+                            <span>Combo 3 chai Nước giặt OMO</span>
+                            <div class="suggestItemPriceSale">
+                                <span class="suggestItemPrice">171.000 đ</span>
+                                <span class="suggestItemSold">Đã bán 7,5k</span>
+                            </div>
+                            <div class="ratingOfProduct">
+                                <div class="starRatingOfProduct">
+                                    <input id="starRatingOfProductID" type="text" hidden>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span style="
+                                    font-weight: 300; 
+                                    color: black; 
+                                    font-size: 13px;
+                                    padding: 0px;
+                                    margin: 8.5px 5px 5px 5px;"
+                                >
+                                    4
+                                </span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
+                        <button routerLink="/product-detail" class="btnSuggestItem">
+                            <div class="suggestItemSaleTag">
+                                -50%
+                            </div>
+                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
+                            <span>Combo 3 chai Nước giặt OMO</span>
+                            <div class="suggestItemPriceSale">
+                                <span class="suggestItemPrice">171.000 đ</span>
+                                <span class="suggestItemSold">Đã bán 7,5k</span>
+                            </div>
+                            <div class="ratingOfProduct">
+                                <div class="starRatingOfProduct">
+                                    <input id="starRatingOfProductID" type="text" hidden>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span style="
+                                    font-weight: 300; 
+                                    color: black; 
+                                    font-size: 13px;
+                                    padding: 0px;
+                                    margin: 8.5px 5px 5px 5px;"
+                                >
+                                    4
+                                </span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
+                        <button routerLink="/product-detail" class="btnSuggestItem">
+                            <div class="suggestItemSaleTag">
+                                -50%
+                            </div>
+                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
+                            <span>Combo 3 chai Nước giặt OMO</span>
+                            <div class="suggestItemPriceSale">
+                                <span class="suggestItemPrice">171.000 đ</span>
+                                <span class="suggestItemSold">Đã bán 7,5k</span>
+                            </div>
+                            <div class="ratingOfProduct">
+                                <div class="starRatingOfProduct">
+                                    <input id="starRatingOfProductID" type="text" hidden>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span style="
+                                    font-weight: 300; 
+                                    color: black; 
+                                    font-size: 13px;
+                                    padding: 0px;
+                                    margin: 8.5px 5px 5px 5px;"
+                                >
+                                    4
+                                </span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
+                        <button routerLink="/product-detail" class="btnSuggestItem">
+                            <div class="suggestItemSaleTag">
+                                -50%
+                            </div>
+                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
+                            <span>Combo 3 chai Nước giặt OMO</span>
+                            <div class="suggestItemPriceSale">
+                                <span class="suggestItemPrice">171.000 đ</span>
+                                <span class="suggestItemSold">Đã bán 7,5k</span>
+                            </div>
+                            <div class="ratingOfProduct">
+                                <div class="starRatingOfProduct">
+                                    <input id="starRatingOfProductID" type="text" hidden>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span style="
+                                    font-weight: 300; 
+                                    color: black; 
+                                    font-size: 13px;
+                                    padding: 0px;
+                                    margin: 8.5px 5px 5px 5px;"
+                                >
+                                    4
+                                </span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
+                        <button routerLink="/product-detail" class="btnSuggestItem">
+                            <div class="suggestItemSaleTag">
+                                -50%
+                            </div>
+                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
+                            <span>Combo 3 chai Nước giặt OMO</span>
+                            <div class="suggestItemPriceSale">
+                                <span class="suggestItemPrice">171.000 đ</span>
+                                <span class="suggestItemSold">Đã bán 7,5k</span>
+                            </div>
+                            <div class="ratingOfProduct">
+                                <div class="starRatingOfProduct">
+                                    <input id="starRatingOfProductID" type="text" hidden>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span style="
+                                    font-weight: 300; 
+                                    color: black; 
+                                    font-size: 13px;
+                                    padding: 0px;
+                                    margin: 8.5px 5px 5px 5px;"
+                                >
+                                    4
+                                </span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
+                        <button routerLink="/product-detail" class="btnSuggestItem">
+                            <div class="suggestItemSaleTag">
+                                -50%
+                            </div>
+                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
+                            <span>Combo 3 chai Nước giặt OMO</span>
+                            <div class="suggestItemPriceSale">
+                                <span class="suggestItemPrice">171.000 đ</span>
+                                <span class="suggestItemSold">Đã bán 7,5k</span>
+                            </div>
+                            <div class="ratingOfProduct">
+                                <div class="starRatingOfProduct">
+                                    <input id="starRatingOfProductID" type="text" hidden>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span style="
+                                    font-weight: 300; 
+                                    color: black; 
+                                    font-size: 13px;
+                                    padding: 0px;
+                                    margin: 8.5px 5px 5px 5px;"
+                                >
+                                    4
+                                </span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
+                        <button routerLink="/product-detail" class="btnSuggestItem">
+                            <div class="suggestItemSaleTag">
+                                -50%
+                            </div>
+                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
+                            <span>Combo 3 chai Nước giặt OMO</span>
+                            <div class="suggestItemPriceSale">
+                                <span class="suggestItemPrice">171.000 đ</span>
+                                <span class="suggestItemSold">Đã bán 7,5k</span>
+                            </div>
+                            <div class="ratingOfProduct">
+                                <div class="starRatingOfProduct">
+                                    <input id="starRatingOfProductID" type="text" hidden>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span style="
+                                    font-weight: 300; 
+                                    color: black; 
+                                    font-size: 13px;
+                                    padding: 0px;
+                                    margin: 8.5px 5px 5px 5px;"
+                                >
+                                    4
+                                </span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
+                        <button routerLink="/product-detail" class="btnSuggestItem">
+                            <div class="suggestItemSaleTag">
+                                -50%
+                            </div>
+                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
+                            <span>Combo 3 chai Nước giặt OMO</span>
+                            <div class="suggestItemPriceSale">
+                                <span class="suggestItemPrice">171.000 đ</span>
+                                <span class="suggestItemSold">Đã bán 7,5k</span>
+                            </div>
+                            <div class="ratingOfProduct">
+                                <div class="starRatingOfProduct">
+                                    <input id="starRatingOfProductID" type="text" hidden>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span style="
+                                    font-weight: 300; 
+                                    color: black; 
+                                    font-size: 13px;
+                                    padding: 0px;
+                                    margin: 8.5px 5px 5px 5px;"
+                                >
+                                    4
+                                </span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
+                        <button routerLink="/product-detail" class="btnSuggestItem">
+                            <div class="suggestItemSaleTag">
+                                -50%
+                            </div>
+                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
+                            <span>Combo 3 chai Nước giặt OMO</span>
+                            <div class="suggestItemPriceSale">
+                                <span class="suggestItemPrice">171.000 đ</span>
+                                <span class="suggestItemSold">Đã bán 7,5k</span>
+                            </div>
+                            <div class="ratingOfProduct">
+                                <div class="starRatingOfProduct">
+                                    <input id="starRatingOfProductID" type="text" hidden>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span style="
+                                    font-weight: 300; 
+                                    color: black; 
+                                    font-size: 13px;
+                                    padding: 0px;
+                                    margin: 8.5px 5px 5px 5px;"
+                                >
+                                    4
+                                </span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
+                        <button routerLink="/product-detail" class="btnSuggestItem">
+                            <div class="suggestItemSaleTag">
+                                -50%
+                            </div>
+                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
+                            <span>Combo 3 chai Nước giặt OMO</span>
+                            <div class="suggestItemPriceSale">
+                                <span class="suggestItemPrice">171.000 đ</span>
+                                <span class="suggestItemSold">Đã bán 7,5k</span>
+                            </div>
+                            <div class="ratingOfProduct">
+                                <div class="starRatingOfProduct">
+                                    <input id="starRatingOfProductID" type="text" hidden>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span style="
+                                    font-weight: 300; 
+                                    color: black; 
+                                    font-size: 13px;
+                                    padding: 0px;
+                                    margin: 8.5px 5px 5px 5px;"
+                                >
+                                    4
+                                </span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
+                        <button routerLink="/product-detail" class="btnSuggestItem">
+                            <div class="suggestItemSaleTag">
+                                -50%
+                            </div>
+                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
+                            <span>Combo 3 chai Nước giặt OMO</span>
+                            <div class="suggestItemPriceSale">
+                                <span class="suggestItemPrice">171.000 đ</span>
+                                <span class="suggestItemSold">Đã bán 7,5k</span>
+                            </div>
+                            <div class="ratingOfProduct">
+                                <div class="starRatingOfProduct">
+                                    <input id="starRatingOfProductID" type="text" hidden>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span style="
+                                    font-weight: 300; 
+                                    color: black; 
+                                    font-size: 13px;
+                                    padding: 0px;
+                                    margin: 8.5px 5px 5px 5px;"
+                                >
+                                    4
+                                </span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
+                        <button routerLink="/product-detail" class="btnSuggestItem">
+                            <div class="suggestItemSaleTag">
+                                -50%
+                            </div>
+                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
+                            <span>Combo 3 chai Nước giặt OMO</span>
+                            <div class="suggestItemPriceSale">
+                                <span class="suggestItemPrice">171.000 đ</span>
+                                <span class="suggestItemSold">Đã bán 7,5k</span>
+                            </div>
+                            <div class="ratingOfProduct">
+                                <div class="starRatingOfProduct">
+                                    <input id="starRatingOfProductID" type="text" hidden>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span style="
+                                    font-weight: 300; 
+                                    color: black; 
+                                    font-size: 13px;
+                                    padding: 0px;
+                                    margin: 8.5px 5px 5px 5px;"
+                                >
+                                    4
+                                </span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
+                        <button routerLink="/product-detail" class="btnSuggestItem">
+                            <div class="suggestItemSaleTag">
+                                -50%
+                            </div>
+                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
+                            <span>Combo 3 chai Nước giặt OMO</span>
+                            <div class="suggestItemPriceSale">
+                                <span class="suggestItemPrice">171.000 đ</span>
+                                <span class="suggestItemSold">Đã bán 7,5k</span>
+                            </div>
+                            <div class="ratingOfProduct">
+                                <div class="starRatingOfProduct">
+                                    <input id="starRatingOfProductID" type="text" hidden>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span style="
+                                    font-weight: 300; 
+                                    color: black; 
+                                    font-size: 13px;
+                                    padding: 0px;
+                                    margin: 8.5px 5px 5px 5px;"
+                                >
+                                    4
+                                </span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
+                        <button routerLink="/product-detail" class="btnSuggestItem">
+                            <div class="suggestItemSaleTag">
+                                -50%
+                            </div>
+                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
+                            <span>Combo 3 chai Nước giặt OMO</span>
+                            <div class="suggestItemPriceSale">
+                                <span class="suggestItemPrice">171.000 đ</span>
+                                <span class="suggestItemSold">Đã bán 7,5k</span>
+                            </div>
+                            <div class="ratingOfProduct">
+                                <div class="starRatingOfProduct">
+                                    <input id="starRatingOfProductID" type="text" hidden>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span style="
+                                    font-weight: 300; 
+                                    color: black; 
+                                    font-size: 13px;
+                                    padding: 0px;
+                                    margin: 8.5px 5px 5px 5px;"
+                                >
+                                    4
+                                </span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
+                        <button routerLink="/product-detail" class="btnSuggestItem">
+                            <div class="suggestItemSaleTag">
+                                -50%
+                            </div>
+                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
+                            <span>Combo 3 chai Nước giặt OMO</span>
+                            <div class="suggestItemPriceSale">
+                                <span class="suggestItemPrice">171.000 đ</span>
+                                <span class="suggestItemSold">Đã bán 7,5k</span>
+                            </div>
+                            <div class="ratingOfProduct">
+                                <div class="starRatingOfProduct">
+                                    <input id="starRatingOfProductID" type="text" hidden>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span style="
+                                    font-weight: 300; 
+                                    color: black; 
+                                    font-size: 13px;
+                                    padding: 0px;
+                                    margin: 8.5px 5px 5px 5px;"
+                                >
+                                    4
+                                </span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
+                        <button routerLink="/product-detail" class="btnSuggestItem">
+                            <div class="suggestItemSaleTag">
+                                -50%
+                            </div>
+                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
+                            <span>Combo 3 chai Nước giặt OMO</span>
+                            <div class="suggestItemPriceSale">
+                                <span class="suggestItemPrice">171.000 đ</span>
+                                <span class="suggestItemSold">Đã bán 7,5k</span>
+                            </div>
+                            <div class="ratingOfProduct">
+                                <div class="starRatingOfProduct">
+                                    <input id="starRatingOfProductID" type="text" hidden>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span style="
+                                    font-weight: 300; 
+                                    color: black; 
+                                    font-size: 13px;
+                                    padding: 0px;
+                                    margin: 8.5px 5px 5px 5px;"
+                                >
+                                    4
+                                </span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
+                        <button routerLink="/product-detail" class="btnSuggestItem">
+                            <div class="suggestItemSaleTag">
+                                -50%
+                            </div>
+                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
+                            <span>Combo 3 chai Nước giặt OMO</span>
+                            <div class="suggestItemPriceSale">
+                                <span class="suggestItemPrice">171.000 đ</span>
+                                <span class="suggestItemSold">Đã bán 7,5k</span>
+                            </div>
+                            <div class="ratingOfProduct">
+                                <div class="starRatingOfProduct">
+                                    <input id="starRatingOfProductID" type="text" hidden>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span style="
+                                    font-weight: 300; 
+                                    color: black; 
+                                    font-size: 13px;
+                                    padding: 0px;
+                                    margin: 8.5px 5px 5px 5px;"
+                                >
+                                    4
+                                </span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="col l-2 m-3 c-6 btnSuggestItemContainer">
+                        <button routerLink="/product-detail" class="btnSuggestItem">
+                            <div class="suggestItemSaleTag">
+                                -50%
+                            </div>
+                            <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-m0cs9d5vmtild0.webp" alt="">
+                            <span>Combo 3 chai Nước giặt OMO</span>
+                            <div class="suggestItemPriceSale">
+                                <span class="suggestItemPrice">171.000 đ</span>
+                                <span class="suggestItemSold">Đã bán 7,5k</span>
+                            </div>
+                            <div class="ratingOfProduct">
+                                <div class="starRatingOfProduct">
+                                    <input id="starRatingOfProductID" type="text" hidden>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <span style="
+                                    font-weight: 300; 
+                                    color: black; 
+                                    font-size: 13px;
+                                    padding: 0px;
+                                    margin: 8.5px 5px 5px 5px;"
+                                >
+                                    4
+                                </span>
                             </div>
                         </button>
                     </div>

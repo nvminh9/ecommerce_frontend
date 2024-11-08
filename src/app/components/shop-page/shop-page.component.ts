@@ -13,7 +13,16 @@ import { RouterOutlet } from '@angular/router';
 export class ShopPageComponent {
 
   // Xử lý chuyển tab trong trang Shop
-  handleClickTabShopPage(e: any) {
-    
+  handleClickTabShopPage(id: string) {
+    if(id === "btnHomeID"){
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      (document.getElementById(id) as HTMLElement).classList.add("checked");
+      (document.getElementById('btnAllProductID') as HTMLElement).classList.remove("checked");
+    }else{
+      (document.getElementById('topOfproductListMainID') as HTMLElement).scrollIntoView();
+      (document.getElementById(id) as HTMLElement).classList.add("checked");
+      (document.getElementById('btnHomeID') as HTMLElement).classList.remove("checked");
+    }
   } 
 }

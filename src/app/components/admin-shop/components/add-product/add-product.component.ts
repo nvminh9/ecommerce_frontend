@@ -185,7 +185,7 @@ export class AddProductComponent {
     spanQuantity.style.fontSize = "14px";
     spanQuantity.style.textAlign = "center";
     spanQuantity.textContent = previewVariantQuantity;
-
+    
     // Tạo button Xóa
     const button = document.createElement("button");
     button.className = "btnDeleteVariant";
